@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>PT Pitoe Sarana Informatika</title>
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/animations.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet">
+  <link href="color/default.css" rel="stylesheet">
+
+<script>
+  var captcha= new Array ();
+  function validateRecaptcha(){
+      var recaptcha= document.getElementById("recaptcha").value;;
+      var validRecaptcha=0;
+      for(var z=0; z<6; z++){
+          if(recaptcha.charAt(z)!= captcha[z]){
+              validRecaptcha++;
+          }
+      }
+      if (recaptcha == ""){
+          document.getElementById('errCaptcha').innerHTML = 'Re-Captcha must be filled';
+      } else if (validRecaptcha>0 || recaptcha.length>6){
+          document.getElementById('errCaptcha').innerHTML = 'Sorry, Wrong Re-Captcha';
+      } else{
+          document.getElementById('errCaptcha').innerHTML = 'OK';
+      }
+  }
+  function createCaptcha(){
+      for(q=0; q<6 ; q++){
+          if(q %2 ==0){
+              captcha[q] = String.fromCharCode(Math.floor((Math.random()*26)+65));
+          }else{      
+              captcha[q] = Math.floor((Math.random()*10)+0);
+          }
+      }
+      thecaptcha=captcha.join("");
+    document.getElementById('captcha').innerHTML=
+     "<div class='col-md-6 text-right'><span class='captcha'> " + thecaptcha+ " </span></div>" + "&nbsp; <div class='col-md-6 text-left'><button style='font-size: 30px;' class='fa fa-refresh btn btn-red' onclick='createCaptcha()'></button></div>"; 
+}
+</script>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target="navbar-custom">
+
+  <section id="intro" class="hero">
+    <div class="container animatedParent">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 learn-more text-center animated bounceInDown">
+          <p>Learn more...</p>
+          <a href="#about" class="fa fa-angle-double-down btn-scroll"></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Navigation -->
+    <nav class="navbar navbar-custom" role="navigation" id="navigation">
+      <div class="container">
+        <div class="navbar-header">
+            <a href="index.html" class="navbar-brand btn-scroll"></a>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+              <span class="fa fa-bars"></span>
+            </button>
+        </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="menu">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="ye active"><a href="#intro">Home</a></li>
+                <li class="ye"><a href="#about">About Us</a></li>
+                <li class="ye"><a href="#trackrecord">Our Work</a></li>
+                <li class="ye"><a href="#ourteam">Team</a></li>
+                <li class="ye"><a href="#support">Support</a></li>
+                <li class="ye"><a href="#contact">Contact</a></li>
+                <li>
+                  <div class="dropdown">
+                  <button type="button" class="btn btn-red dropdown-toggle" data-toggle="dropdown">
+                    <b>Login</b> <span class="caret"></span>
+                  </button>
+                  <div id="login-dp" class="dropdown-menu">
+                    <div class="row">
+                      <div class="col-md-12 text-center">
+                        <b>Login</b>
+                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                          <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="sr-only" for="exampleInputPassword2">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                            <a href="" class="help-block text-right" style="font-size: 10px;">Forget the password ?</a>
+                          <div class="form-group">
+                            <button type="submit" class="btn btn-red btn-block tombol" style="border-radius: 25px;">
+                              Sign in
+                            </button>
+                          </div>
+                          <div class="checkbox">
+                            <label><input type="checkbox">keep me logged-in</label>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="bottom text-center">
+                        New here ? <a href="#contact"><b>Join Us</b></a>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- /.Navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+  <!-- /Navigation -->
+
+<!-- Section: about -->
+  <section id="about" class="home-section color-dark bg-white">
+    <div class="container marginbot-50">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="animatedParent">
+            <div class="section-heading text-center animated bounceInDown">
+              <h2 class="h-bold" style="color: #f89520;">About Us</h2>
+              <div class="divider-header"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 animatedParent">
+          <div class="text-center">
+            <p>
+              PT Pitoe Sarana Informatika adalah perusahaan pengolahan data secara online yang memudahkan pengarsipan, dengan cara pengaplikasian yang mudah dan menghemat banyak biaya.
+            </p>
+          </div>
+        </div>
+      </div> <br><hr>
+      <div class="row">
+        <div class="col-lg-6">
+          <h5>Milestone</h5>
+          <p style="text-align: justify;">Dirintis dari tahun 2002 oleh bapak Mujahidin Hasan hingga sekarang. PT Pitoe Sarana Informatika adalah perusahaan berbadan hukum Perseroan Terbatas dan dikukuhkan oleh Kemenkumham RI Nomor AHU-036638.AH.0101TAHUN 2016 pada tanggal 18 Agustus 2016. Banyak produk yang sudah dihasilkan Software VisualPixels System Notaris dan PPAT Versi 5.0, dan Pitoe Sistem Admin Fidusia Versi 1.0. s.d. Versi 5.0, software yang dikhususkan kepada rekan Notaris yang mengerjakan Akta Jaminan Fidusia secara massal. Dari sistem pendaftaran masih manual melalui kanwil yang ditunjuk, hingga pendaftaran melalui Online selain itu ada pula jasa local networking, Notary Software Development. Selain yang disebutkan diatas masih banyak produk-produk yang dapat dihasilkan, baik produk publik maupun produk kustom.</p>
+          
+        </div>
+        <div class="col-lg-6">
+          <h5>Vision</h5>
+          </i>Menjadi Perusahaan Penyedia layanan Jasa Pengolahan Data Terdepan di Indonesia.</p>
+          <br>
+          <h5>Mission</h5>
+          <p style="text-align: justify;"><i class="fa fa-square" aria-hidden="true" style="color: #f89520;"></i> Memberikan layanan prima dan solusi yang bernilai tambah kepada seluruh klien, dan selaku mitra pilihan utama.</p>
+          <p style="text-align: justify;"><i class="fa fa-square" aria-hidden="true" style="color: #f89520;"></i> Memahami beragam kebutuhan klien dan memberikan layanan IT yang tepat demi tercapainya kepuasan optimal bagi semua klien kami.</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /Section: about -->
+
+<!-- Section: work -->
+  <section id="trackrecord" class="home-section color-dark text-center our-works">
+    <div class="container marginbot-50">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div>
+            <div class="animatedParent">
+              <div class="section-heading text-center">
+                <h2 class="h-bold text-white animated bounceInDown" style="color: #f89520;">Our Work</h2>
+                <div class="divider-header"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row animatedParent">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+
+          <div class="row" align="center">
+            <div class="col-md-4 animated fadeInLeft slower pad20">
+              <div class="do-item do-item-circle do-circle">
+                <img src="img/berkas.png" class="do-item do-circle">
+                <div class="do-info-wrap do-circle">
+                  <div class="do-info">
+                    <div class="do-info-front do-circle"></div>
+                    <div class="do-info-back do-circle">
+                      <h3>3.000 data dalam setiap hari</h3>
+                      <div><p><i>Setiap 24 jam kami mengolah lebih dari 3.000 data.</i></p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 animated fadeInLeft slow pad20">
+              <div class="do-item do-item-circle do-circle">
+                <img src="img/teknologi.png" class="do-item do-circle">
+                <div class="do-info-wrap do-circle">
+                  <div class="do-info">
+                    <div class="do-info-front do-circle"></div>
+                    <div class="do-info-back do-circle">
+                      <h3>Tekhnologi<br>dan Alat Terbaik</h3>
+                      <div><p><i>Dengan kemampuan di bidang tekhnologi dan alat terbaik kami siap melayani kebutuhan Anda.</i></p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 animated fadeInLeft pad20">
+              <div class="do-item do-item-circle do-circle">
+                <img src="img/partner.png" class="do-item do-circle">
+                <div class="do-info-wrap do-circle">
+                  <div class="do-info">
+                    <div class="do-info-front do-circle"></div>
+                    <div class="do-info-back do-circle">
+                      <h3>Dukungan<br>Perusahan Ternama</h3>
+                      <div><p><i>Kami didukung oleh perusahan-perusahan ternama baik di dalam maupun diluar negeri.</i></p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- /Section: works -->
+
+  <!-- Section: our team -->
+  <section id="ourteam" class="home-section color-dark bg-gray">
+    <div class="container marginbot-50">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div>
+            <div class="section-heading text-center">
+              <h2 class="h-bold" style="color: #f89520;">TEAM</h2>
+              <div class="divider-header"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <div class="container animatedParent teamP">
+        <!--flip-->
+        <div class="col-md-4 col-xs-12 animated fadeInUp slow teamA">
+          <div class="card-container">
+            <div class="card">
+              <div class="front">
+                <div class="cover">
+                  <img src="img/teknologi.jpg"/>
+                </div>
+                <div class="user">
+                  <img class="img-circle" src="img/team/pak_taufani.jpg"/>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h3 class="name">AKHMAD TAUFANI</h3>
+                      <p><b class="profession">CTO</b></p>
+                      <p class="text-center"><i>Chief Technology Officer</i></p>
+                  </div>
+                  <div class="footer">
+                    <div class="rating">
+                      <i class="fa fa-plus"></i>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- end front panel -->
+              <div class="back">
+                <div class="header">
+                  <h5 class="motto">"Info"</h5>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h4 class="text-center">About</h4>
+                    <p class="text-center">Chief Technology Officer di PT. Pitoe Sarana Informatika sejak 2016</p>
+                    <!-- <div class="stats-container">
+                      <a href="taufani_profil.html"><button class="btn btn-red">View Profile</button></a>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="footer">
+                  <div class="social text-center">
+                    <a href="#"><i class="fa fa-skype fa-fw"></i></a>
+                  </div>
+                </div>
+              </div> <!-- end back panel -->
+            </div> <!-- end card -->
+          </div> <!-- end card-container -->
+        </div>
+        <div class="col-md-4 col-xs-12 animated fadeInUp teamB">
+          <div class="card-container">
+            <div class="card">
+              <div class="front">
+                <div class="cover">
+                  <img src="img/ceo.jpg"/>
+                </div>
+                <div class="user">
+                  <img class="img-circle" src="img/team/pak_mujahidin.jpg"/>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h3 class="name">MUJAHIDIN HASAN</h3>
+                    <p><b class="profession">CEO</b></p>
+                    <p class="text-center"><i>Chief Executive Officer</i></p>
+                  </div>
+                  <div class="footer">
+                    <div class="rating">
+                      <i class="fa fa-plus"></i>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- end front panel -->
+              <div class="back">
+                <div class="header">
+                  <h5 class="motto">"Info"</h5>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h4 class="text-center">About</h4>
+                    <p class="text-center">Chief Executive Officer di PT. Pitoe Sarana Informatika sejak 2016</p>
+                    <!-- <div class="stats-container">
+                      <a href="mujahidin_profil.html"><button class="btn btn-red">View Profile</button></a>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="footer">
+                  <div class="social text-center">
+                    <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
+                    <a href="#"><i class="fa fa-google-plus fa-fw"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
+                  </div>
+                </div>
+              </div> <!-- end back panel -->
+            </div> <!-- end card -->
+          </div> <!-- end card-container -->
+        </div>
+        <div class="col-md-4 col-xs-12 animated fadeInUp slower teamC">
+          <div class="card-container">
+            <div class="card">
+              <div class="front">
+                <div class="cover">
+                  <img src="img/operating.jpg"/>
+                </div>
+                <div class="user">
+                  <img class="img-circle" src="img/team/pak_indra.jpg"/>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h3 class="name">INDIRA GUNANTARA</h3>
+                    <p><b class="profession">COO</b></p>
+                    <p class="text-center"><i>Chief Operating Officer</i></p>
+                  </div>
+                  <div class="footer">
+                    <div class="rating">
+                      <i class="fa fa-plus"></i>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- end front panel -->
+              <div class="back">
+                <div class="header">
+                  <h5 class="motto">"Info"</h5>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h4 class="text-center">About</h4>
+                    <p class="text-center">Chief Operating Officer di PT. Pitoe Sarana Informatika sejak 2016</p>
+                    <!-- <div class="stats-container">
+                      <a href="indra_profil.html"><button class="btn btn-red">View Profile</button></a>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="footer">
+                  <div class="social text-center">
+                    <a href="https://www.instagram.com/indra_gunantara"><i class="fa fa-instagram fa-fw"></i></a>
+                  </div>
+                </div>
+              </div> <!-- end back panel -->
+            </div> <!-- end card -->
+          </div> <!-- end card-container -->
+        </div>
+        <!--End flip-->
+      </div>
+    </div>
+
+      <div class="container animatedParent">
+        <!--flip-->
+        <div class="col-md-4 col-xs-12 animated fadeInUp slow">
+          <div class="card-container text-center">
+            <div class="card">
+              <div class="front">
+                <div class="cover">
+                  <img src="img/finance.jpg"/>
+                </div>
+                <div class="user">
+                  <img class="img-circle" src="img/team/user.jpg"/>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h3 class="name">IWAN</h3>
+                    <p><b class="profession"></b></p>
+                    <p class="text-center"><i>Finance Head</i></p>
+                  </div>
+                  <div class="footer">
+                    <div class="rating">
+                      <i class="fa fa-plus"></i>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- end front panel -->
+              <div class="back">
+                <div class="header">
+                  <h5 class="motto">"Info"</h5>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h4 class="text-center">About</h4>
+                    <p class="text-center">Finance Head di PT. Pitoe Sarana Informatika sejak 2017</p>
+                    <!-- <div class="stats-container">
+                      <a href="iwan_profil.html"><button class="btn btn-red">View Profile</button></a>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="footer">
+                  <div class="social text-center">
+                    <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
+                    <a href="#"><i class="fa fa-google-plus fa-fw"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
+                  </div>
+                </div>
+              </div> <!-- end back panel -->
+            </div> <!-- end card -->
+          </div> <!-- end card-container -->
+        </div>
+        <div class="col-md-4 col-xs-12 animated fadeInUp">
+          <div class="card-container text-center">
+            <div class="card">
+              <div class="front">
+                <div class="cover">
+                  <img src="img/legal.jpg"/>
+                </div>
+                <div class="user">
+                  <img class="img-circle" src="img/team/rizky.jpg"/>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h3 class="name">RISZKI FAZRIN SUWANDI, SH</h3>
+                    <p><b class="profession"></b></p>
+                    <p class="text-center"><i>Legal Head</i></p>
+                  </div>
+                  <div class="footer">
+                    <div class="rating">
+                      <i class="fa fa-plus"></i>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- end front panel -->
+              <div class="back">
+                <div class="header">
+                  <h5 class="motto">"Info"</h5>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h4 class="text-center">About</h4>
+                    <p class="text-center">Legal Head di PT. Pitoe Sarana Informatika sejak 2017</p>
+                    <!-- <div class="stats-container">
+                      <a href="rizky_profil.html"><button class="btn btn-red">View Profile</button></a>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="footer">
+                  <div class="social text-center">
+                    <a href="https://www.facebook.com/rizki.fazrin"><i class="fa fa-facebook fa-fw"></i></a>
+                    <a href="https://www.instagram.com/rizki_fazrin"><i class="fa fa-instagram fa-fw"></i></a>
+                  </div>
+                </div>
+              </div> <!-- end back panel -->
+            </div> <!-- end card -->
+          </div> <!-- end card-container -->
+        </div>
+        <div class="col-md-4 col-xs-12 animated fadeInUp slower">
+          <div class="card-container text-center">
+            <div class="card">
+              <div class="front">
+                <div class="cover">
+                  <img src="img/teknologi2.jpg"/>
+                </div>
+                <div class="user">
+                  <img class="img-circle" src="img/team/bagus.jpeg"/>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h3 class="name">BAGUS NUR FADLI</h3>
+                    <p><b class="profession"></b></p>
+                    <p class="text-center"><i>IT Production</i></p>
+                  </div>
+                  <div class="footer">
+                    <div class="rating">
+                      <i class="fa fa-plus"></i>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- end front panel -->
+              <div class="back">
+                <div class="header">
+                  <h5 class="motto">"Info"</h5>
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h4 class="text-center">About</h4>
+                    <p class="text-center">IT Production di PT. Pitoe Sarana Informatika sejak 2017</p>
+                    <!-- <div class="stats-container">
+                      <a href="bagus_profil.html"><button class="btn btn-red">View Profile</button></a>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="footer">
+                  <div class="social text-center">
+                    <a href="https://www.instagram.com/bagusnurfadli"><i class="fa fa-instagram fa-fw"></i></a>
+                  </div>
+                </div>
+              </div> <!-- end back panel -->
+            </div> <!-- end card -->
+          </div> <!-- end card-container -->
+        </div>
+        <!--End flip-->
+      </div>
+
+  </section>
+  <!-- /Section: services -->
+
+  <!-- /section: support-->
+  <section id="support" class="home-section color-dark text-center bg-white">
+    <div class="container marginbot-50 ">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div>
+            <div class="animatedParent">
+              <div class="section-heading text-center">
+                <h2 class="h-bold animated bounceInDown" style="color: #f89520;">Support & Powered By</h2>
+                <div class="divider-header"></div>
+              </div>
+              <br>
+              <p>Dalam rangka menyediakan layanan yang terpercaya, PT Pitoe Sarana Informatika didukung oleh perusahaan terkemuka baik dalam maupun luar negeri.</p>
+              <p>Ini merupakan bagian dari komitmen kami untuk senantiasa siap melayani Anda dengan layanan terbaik.</p>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row animatedParent">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="row animated fadeInUp">
+            <div class="col-md-2 pad20"><img src="img/support/java.png" alt="img" width="80px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/mysql.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/angular.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/apache.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/cisco.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/centos.png" alt="img" width="100px"></div>
+          </div> <br><br>
+          <div class="row animated fadeInUp slow">
+            <div class="col-md-2 pad20"><img src="img/support/adobe.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/bootstrap.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/kaspersky.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/biznet.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/telkom.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/lintasarta.png" alt="img" width="100px"></div> 
+          </div> <br><br>
+          <div class="row animated fadeInUp slower">
+            <div class="col-md-2 pad20"><img src="img/support/bca.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/bni.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/chrome.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/win-s-2012.png" alt="img" width="100px"></div>
+            <div class="col-md-2 pad20"><img src="img/support/win10.png" alt="img" width="100px"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section> 
+  <!-- /section: support-->
+
+  <!-- Section: contact -->
+  <section id="contact" class="home-section nopadd-bot color-dark bg-gray text-center bg-contact">
+    <div class="container marginbot-50">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="animatedParent">
+            <div class="section-heading text-center">
+              <h2 class="h-bold animated bounceInDown" style="color: #f89520;">Contact Us</h2>
+              <div class="divider-header"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row marginbot-80 animatedParent alamat">
+        <div class="col-md-4 text-left animated fadeInLeft pad20">
+            <b>Corporate Headquarters</b> <br>
+            <p>Ruko SPBU 34-17413 No. 7,<br>
+            Jln. Raya Jatiasih No. 1, <br>
+            Wibawa Mukti, Jatiasih, <br>
+            Bekasi City, West Java 17421</p>
+            <b>General Contact</b> <br>
+            <p>Phone: (021) 12345678<br>
+            Fax: (021) 12345678<br>
+            Email: support@mail.com</p>
+            <b>Sales Info & Inquiries</b> <br>
+            <p>Email: marketing@mail.com</p>
+            
+            <button type="button" style="border-radius: 20px;" class="btn btn-red" data-toggle="modal" data-target="#findus"><span class="fa fa-map-marker"></span> FIND US</button>
+
+        </div>
+        <div class="col-md-8 animated fadeInRight pad20">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+
+          <form id="contact-form" action="#" method="POST" role="form" class="contactForm">
+            <div class="row">
+              <div class="col-md-6 xs-marginbot-20">
+                <div class="form-group input-group">
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                  <input type="email" class="form-control" name="Email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 xs-marginbot-20">
+                <div class="form-group input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone-square"></i></span>
+                  <input type="text" name="Phone" class="form-control" id="phone" placeholder="Phone Number (Optional)" data-rule="minlen:4"/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group input-group">
+                  <span class="input-group-addon"><i class="fa fa-building-o"></i></span>
+                  <input type="text" class="form-control" name="Company" id="Company" placeholder="Company (Optional)" data-rule="Company" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="Subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="Message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+                <div id="captcha" style="display: flex; justify-content: space-around; margin-bottom: 10px;">
+                  <script>createCaptcha();</script>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="recaptcha" id="recaptcha" placeholder="Type the captcha"/>
+                  <div id="errCaptcha" class="errmsg"></div>
+                </div>
+                <button type="submit" value="Send" onclick="validateRecaptcha()" class="btn btn-skin btn-lg btn-block" id="btnContactUs">
+                      Send Message</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+<!-- MODAL MAP -->
+  <div id="findus" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 modal fade" role="dialog" style="z-index: 99999">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title h-bold">MAP</h4>
+          </div>
+          <div class="modal-body">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.77635215193!2d106.95895131425891!3d-6.293096663344607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d0d3056d3bb%3A0xb7548e5bd409e6a2!2sPitoe+Sarana+Informatika%2C+PT!5e0!3m2!1sid!2sid!4v1523507357685" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript Files -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.scrollTo.js"></script>
+  <script src="js/jquery.appear.js"></script>
+  <script src="js/stellar.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/css3-animate-it.js"></script>
+  <script src="contactform/contactform.js"></script>
+
+<script type="text/javascript">
+    $().ready(function(){
+        $('[rel="tooltip"]').tooltip();
+
+    });
+
+    function rotateCard(btn){
+        var $card = $(btn).closest('.card-container');
+        console.log($card);
+        if($card.hasClass('hover')){
+            $card.removeClass('hover');
+        } else {
+            $card.addClass('hover');
+        }
+    }
+</script>
+
+</body>
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-4 logofoot pad20">
+              <a href="index.html"><img src="img/LogoOutline.png" width="100px"></a>
+        </div>
+        <div class="col-md-6 col-sm-8 copyright pad20">
+          &copy; Copyright - <a href="index.html">PT PITOE Sarana Informatika</a>.All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>
